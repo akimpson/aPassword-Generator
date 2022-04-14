@@ -36,5 +36,17 @@ var generatePassword = function () {
     return password;
 };
 
+// Create a function to ask for password criteria
+var getCriteria = function () {
+    // Each time a password generates it will reset the array
+    passwordOptions = [];
+
+    // Ask the user for input on password length, require a valid input value, call the function again if input is invalid
+    length = parseInt(
+        window.prompt(
+            "Choose the number of characters for your new password. Please choose betweem 8 and 127 characters."
+        )
+    );
+}
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
