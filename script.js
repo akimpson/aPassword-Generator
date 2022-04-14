@@ -64,7 +64,28 @@ var getCriteria = function () {
         getCriteria();
     }
 
-    // Ask the user to confirm using uppercase, lowercase, and symbols, then conca
-}
+    // Ask the user to confirm using uppercase, lowercase, and symbols, then concatenate strings
+    if (window.confirm("Including uppercase letters?")) {
+        passwordOptions = passwordOptions.concat(uppercaseArray);
+    }
+
+    if (window.confirm("Including lowercase letters?")) {
+        passwordOptions = passwordOptions.concat(lowercaseArray);
+    }
+
+    if (window.confirm("Including numbers?")) {
+        passwordOptions = passwordOptions.concat(numbersArray);
+    }
+
+    if  (window.confirm("Including symbols?")) {
+        passwordOptions = passwordOptions.concat(symbolsArray);
+    }
+};
+
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", getPassword);
+
+// Initially, on click the user is asked a series of questions
+// Password must include lowercase, uppercase, symbols and numbers
+// Password length 8 - 127 characters
+// After answering all questions via window prompt, a password will be gautomatically generated
