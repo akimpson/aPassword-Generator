@@ -26,5 +26,15 @@ var getPassword = function () {
 
 };
 
+// Generate a password once criteria has been input by user
+var generatePassword = function () {
+    var password = "";
+    for (let i = 0; i < length; i++) {
+        var randomCharacters = Math.floor(Math.random() * passwordOptions.length);
+        password = password + passwordOptions[randomCharacters];
+    }
+    return password;
+};
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
