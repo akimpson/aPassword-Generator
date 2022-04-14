@@ -1,3 +1,9 @@
+// Declare variable length to use in the getCriteria function
+let length = "";
+
+// added an empty array to concatenate with the criteria for the password characters
+passwordOptions = [];
+
 // Add an array of letters (uppercase & lowercase), numbers, and symbols
    
 // prettier-ignore
