@@ -13,9 +13,6 @@ numbersArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8'];
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
-
-
-
 // Write password to the #password input
 // Get criteria for the password and assign a password with querySelector to be generated on screen in browser
 var getPassword = function () {
@@ -47,6 +44,21 @@ var getCriteria = function () {
             "Choose the number of characters for your new password. Please choose betweem 8 and 127 characters."
         )
     );
+    if (length < 8) {
+        window.alert("Password must be at least 8 characters.");
+        // Calls the function to ask again 'repeat'
+        getCriteria();
+    } else if (length > 127) {
+        window.alert("Password must not contain more than 127 characters.");
+        // Call the function to ask again
+      getCriteria();  
+    } else if  (isNaN(length)) {
+        window.alert("Try Again! Please input a valid answer.");
+        // Call the function to ask again
+        getCriteria();
+    }
+
+    // Ask the user to confirm using uppercase, lowercase, and symbols, then conca
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
