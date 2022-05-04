@@ -68,6 +68,9 @@ function generatePasswordCharacterString(passwordReq) {
     if (passwordReq.numeric) {
         passwordString += numbersString;
     }
+    if (passwordReq.specialCharacters) {
+        passwordString += specialCharacterString;
+    }
 
     return passwordString;
 }
@@ -82,3 +85,25 @@ function generatePassword(passwordString, passwordLength) {
 
     return password;
 }
+
+// Write the password using the user's input information
+ function writePassword() {
+    const passwordLength = passwordLengthPrompt();
+
+    const passwordString = generatePasswordCharacterString({
+        uppercase: uppercaseCharactersPrompt(),
+        lowercase: lowercaseCharactersPrompt(),
+        numeric: numericCharactersPrompt(),
+        specialCharacters: specialCharactersPrompt(),     
+  
+    });
+
+    const password = generatePassword(passwordString, passwordLength);
+    const passwordText = document.querySelector('#password');
+
+    passwordText.value = password;
+}
+
+// Add Event Listener to the generate button
+
+generateBtn.addEventListener('click', writePassword);
