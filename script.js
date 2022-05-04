@@ -55,3 +55,19 @@ if (specialCharacters ==='YES' || specialCharacters === 'yes') {
       return;  
     }
 }    
+
+function generatePasswordCharacterString(passwordReq) {
+    let passwordString = '';
+
+    if (passwordReq.uppercase) {
+        passwordString += uppercaseString;
+    }
+    if (passwordReq.lowercase) {
+        passwordString += lowercaseString;
+    }
+    if (passwordReq.numeric) {
+        passwordString += numbersString;
+    }
+
+    return passwordString;
+}
