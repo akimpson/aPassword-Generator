@@ -12,3 +12,13 @@ function passwordLengthPrompt() {
     return passwordLength;
 }
 
+function lowercaseCharactersPrompt() {
+    const lowercaseCharacters = window.prompt(
+        "Would you like lowercase lettercase? Enter 'YES' or 'NO' to make your choice"
+    );
+    if (lowercaseCharacters === 'YES' || lowercaseCharacters === 'yes') {
+        return lowercaseString;
+    } else {
+        return;
+    }
+}
