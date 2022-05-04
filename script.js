@@ -71,3 +71,14 @@ function generatePasswordCharacterString(passwordReq) {
 
     return passwordString;
 }
+
+function generatePassword(passwordString, passwordLength) {
+    let password = '';
+
+    for (let i = 1; i <= passwordLength; i++) {
+        const randomIndex = Math.floor(Math.random() * passwordString.length);
+        password += passwordString[randomIndedx];
+    }
+
+    return password;
+}

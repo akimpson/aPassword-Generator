@@ -9,6 +9,6 @@ After answering all questions via the window prompts, a password will be automat
 
 # Screenshots
 
-[Horiseon webpage navigation links / 4 people looking down](./assets/images/)
+[Coding Quiz](./assets/images/)
 
 This application is published at (https://akimpson.github.io/CodeRefractor/). More of my work can be found at (https://github.com/akimpson)
