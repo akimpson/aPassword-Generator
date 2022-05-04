@@ -6,26 +6,17 @@ const lowercaseString = "abcdefghijklmnopqrstuvwxyz";
 const specialCharacterString = "!@#$%^&*()";
 const uppercaseString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
+// Add function to enter password length
 function passwordLengthPrompt() {
   const passwordLength = window.prompt("Enter Password Length between 8-128");
 
   return passwordLength;
 }
 
-function upperaseCharactersPrompt() {
-  const uppercaseCharacters = window.prompt(
-    "Would you like uppercase letters? Enter 'YES' or 'NO' to make your choice"
-  );
-  if (uppercaseCharacters === "YES" || uppercaseCharacters === "yes") {
-    return uppercaseString;
-  } else {
-    return;
-  }
-}
-
+// Add functions to answer questions that define the characters for the password
 function lowercaseCharactersPrompt() {
   const lowercaseCharacters = window.prompt(
-    "Would you like lowercase letters? Enter 'YES' or 'NO' to make your choice"
+    "Would you like lowercase letters? Enter 'YES' or 'NO' to choose"
   );
   if (lowercaseCharacters === "YES" || lowercaseCharacters === "yes") {
     return lowercaseString;
@@ -34,76 +25,88 @@ function lowercaseCharactersPrompt() {
   }
 }
 
+function uppercaseCharactersPrompt() {
+  const uppercaseCharacters = window.prompt(
+    "Would you like uppercase letters? Enter 'YES' or 'NO' to choose"
+  );
+  if (uppercaseCharacters === "YES" || uppercaseCharacters === "yes") {
+    return uppercaseString;
+  } else {
+    return;
+  }
+}
+
+function specialCharactersPrompt() {
+  const specialCharacters = window.prompt(
+    "Would you like special characters? Enter 'YES' or 'NO' to choose"
+  );
+  if (specialCharacters === "YES" || specialCharacters === "yes") {
+    return specialCharacters;
+  } else {
+    return;
+  }
+}
+
 function numericCharactersPrompt() {
-    const numericCharacters = window.prompt(
-        "Would you like number options? Enter 'YES' or 'NO' to make your choice"
-    );
-    if(numericCharacters === 'YES' || numericCharacters === 'yes' {
-        return numbersString;
-    } else {
-        return;
-    }
+  const numericCharacters = window.prompt(
+    "Would you like numeric letters? Enter 'YES' or 'NO' to choose"
+  );
+  if (numericCharacters === "YES" || numericCharacters === "yes") {
+    return numbersString;
+  } else {
+    return;
+  }
 }
 
-function specialCharactersPrompt( ) { 
-    const specialCharacters = window.prompt(
-    "Would you like special characters? Enter 'YES' or 'NO' to make your choice"
-    );
-if (specialCharacters ==='YES' || specialCharacters === 'yes') {
-    return specialCharacters
-    } else {
-      return;  
-    }
-}    
-
+// Add function to generate password string characters
 function generatePasswordCharacterString(passwordReq) {
-    let passwordString = '';
+  let passwordString = "";
 
-    if (passwordReq.uppercase) {
-        passwordString += uppercaseString;
-    }
-    if (passwordReq.lowercase) {
-        passwordString += lowercaseString;
-    }
-    if (passwordReq.numeric) {
-        passwordString += numbersString;
-    }
-    if (passwordReq.specialCharacters) {
-        passwordString += specialCharacterString;
-    }
+  if (passwordReq.lowercase) {
+    passwordString += lowercaseString;
+  }
+  if (passwordReq.uppercase) {
+    passwordString += uppercaseString;
+  }
+  if (passwordReq.specialCharacters) {
+    passwordString += specialCharacterString;
+  }
+  if (passwordReq.numeric) {
+    passwordString += numbersString;
+  }
 
-    return passwordString;
+  return passwordString;
 }
 
+// Add function to generate the password
 function generatePassword(passwordString, passwordLength) {
-    let password = '';
+  let password = "";
 
-    for (let i = 1; i <= passwordLength; i++) {
-        const randomIndex = Math.floor(Math.random() * passwordString.length);
-        password += passwordString[randomIndedx];
-    }
+  for (let i = 1; i <= passwordLength; i++) {
+    const randomIndex = Math.floor(Math.random() * passwordString.length);
+    password += passwordString[randomIndex];
+  }
 
-    return password;
+  return password;
 }
 
-// Write the password using the user's input information
- function writePassword() {
-    const passwordLength = passwordLengthPrompt();
+// Write password to the #password input
 
-    const passwordString = generatePasswordCharacterString({
-        uppercase: uppercaseCharactersPrompt(),
-        lowercase: lowercaseCharactersPrompt(),
-        numeric: numericCharactersPrompt(),
-        specialCharacters: specialCharactersPrompt(),     
-  
-    });
+function writePassword() {
+  const passwordLength = passwordLengthPrompt();
 
-    const password = generatePassword(passwordString, passwordLength);
-    const passwordText = document.querySelector('#password');
+  const passwordString = generatePasswordCharacterString({
+    lowercase: lowercaseCharactersPrompt(),
+    uppercase: uppercaseCharactersPrompt(),
+    specialCharacters: specialCharactersPrompt(),
+    numeric: numericCharactersPrompt(),
+  });
 
-    passwordText.value = password;
+  const password = generatePassword(passwordString, passwordLength);
+  const passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
 }
 
-// Add Event Listener to the generate button
-
-generateBtn.addEventListener('click', writePassword);
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
