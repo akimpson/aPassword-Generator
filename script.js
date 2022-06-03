@@ -6,14 +6,14 @@ const lowercaseString = "abcdefghijklmnopqrstuvwxyz";
 const specialCharacterString = "!@#$%^&*()";
 const uppercaseString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-// Add function to enter password length
+// Add a function to enter password length
 function passwordLengthPrompt() {
   const passwordLength = window.prompt("Enter Password Length between 8-128");
 
   return passwordLength;
 }
 
-// Add functions to answer questions that define the characters for the password
+// Add functions to answer questions that will define the characters for the password
 function lowercaseCharactersPrompt() {
   const lowercaseCharacters = window.prompt(
     "Would you like lowercase letters? Enter 'YES' or 'NO' to choose"
@@ -58,7 +58,7 @@ function numericCharactersPrompt() {
   }
 }
 
-// Add function to generate password string characters
+// Add a function to generate passwords string characters
 function generatePasswordCharacterString(passwordReq) {
   let passwordString = "";
 
@@ -78,7 +78,7 @@ function generatePasswordCharacterString(passwordReq) {
   return passwordString;
 }
 
-// Add function to generate the password
+// Add a function that generates the password
 function generatePassword(passwordString, passwordLength) {
   let password = "";
 
@@ -90,7 +90,7 @@ function generatePassword(passwordString, passwordLength) {
   return password;
 }
 
-// Write password to the #password input
+// Write the password to the #password input
 
 function writePassword() {
   const passwordLength = passwordLengthPrompt();
@@ -108,5 +108,5 @@ function writePassword() {
   passwordText.value = password;
 }
 
-// Add event listener to generate button
+// Add an event listener to generate a button
 generateBtn.addEventListener("click", writePassword);
