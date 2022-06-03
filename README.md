@@ -10,7 +10,7 @@ After answering all questions via the window prompts, a password will be automat
 
 # Screenshots
 
-[aPassword-Generator](./images/aPassword-Generator%20Screenshot.png)
+(./images/aPassword-Generator%20Screenshot.png)
 
 🔗 Links
 
