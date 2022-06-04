@@ -2,7 +2,7 @@
 
 # Description
 
-HTML, CSS, and Javascript were used to create this application.
+HTML, CSS, and Javascript were used to create this application. <br>
 Initially, upon a click if the Generate Password button, the user is propmted to confirm a series of prompts.
 
 - The password can include symbols, numbers, lowercase, and uppercase letters.
