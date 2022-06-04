@@ -12,7 +12,7 @@ Initially, upon a click of the Generate Password button, the user is propmted to
 
 ## 🔗 Links
 
-This site was built using [Github Pages] and the application is published at (https://akimpson.github.io/aPasssword-Generator/). <br>
+This site was built using [Github Pages](https://akimpson.github.io/aPasssword-Generator/). <br>
 More of my work can be found at (https://github.com/akimpson)
 
 ## Screenshots
