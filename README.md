@@ -8,7 +8,7 @@ Initially, upon a click of the Generate Password button, the user is propmted to
 - The password can include special characters, numbers, lowercase, and uppercase letters.
 - The password length should be between 8 and 128 characters.
 
-After answering all questions via the window prompts, a password will be automatically and randomly generated matching the selected criteria.
+After answering all questions via the window prompts, a password will be automatically and randomly generated based on the selected criteria.
 The password will then be displayed on the webpage.
 
 ## 🔗 Links
